@@ -1,5 +1,6 @@
 import { Media } from '../dist/index';
 import { Viewport } from '../dist/index';
+import { SendKeysPayload } from '../dist/index';
 
 /**
  * Executes a command on the server. If this is a custom command, you need to implement a plugin
@@ -25,4 +26,9 @@ export function emulateMedia(media: Media): Promise<void>;
  */
 export function setUserAgent(userAgent: string): Promise<void>;
 
-export { Media, Viewport };
+/**
+ * Sends a string of keys for the browser to press or type natively.
+ */
+export function sendKeys(payload: SendKeysPayload): Promise<void>;
+
+export { Media, Viewport, SendKeysPayload };
